@@ -20,18 +20,20 @@
     <!-- 連結CSS -->
     <link rel="stylesheet" href="slideshow.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <style>
     /* ----------------導覽列------------------ */
     * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Noto Serif TC', serif;
-  }
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-family: 'Noto Serif TC', serif;
+    }
 
 
     .main-header {
@@ -113,7 +115,9 @@
         margin: auto;
         text-align: center;
         margin-bottom: 130px;
-        margin-top: 100px;
+        margin-top: 180px;
+        position: relative;
+
     }
 
     .title h2 {
@@ -121,6 +125,23 @@
         font-weight: bold;
     }
 
+    .title h2::before,
+    .title h2::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: 50%;
+        background: #666;
+        width: calc(50% - 160px);
+    }
+
+    .title h2::before {
+        left: 0;
+    }
+
+    .title h2::after {
+        right: 0;
+    }
 
     .info {
         width: 100%;
@@ -128,78 +149,87 @@
         flex-wrap: wrap;
     }
 
-    .control{
+    .control {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 30px;
     }
-.container{
-    display: flex;
+
+    .container {
+        display: flex;
         flex-wrap: wrap;
-}
-.options{
-    width: 100%;
-}
-.options-title{
-    font-size: 22px;
-    text-align: center;
-    font-weight: bolder;
-    padding-bottom: 15px;
-    border-bottom: black solid 1px;
-}
-.options-taste{
-    text-align: center;
-    margin-top: 50px;
-    font-weight: 500;
-}
-.options-taste a{
-    text-decoration: inherit;
-    color: rgb(115, 115, 115);
-    margin-left: 60px;
-}
+    }
 
-.card{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
-    border: none;
+    .options {
+        width: 100%;
+    }
 
-}
-.card img{
-    width: 100%;
-    height: 260px;
-    transition: 0.5s;
-}
+    .options-title {
+        font-size: 22px;
+        text-align: center;
+        font-weight: bolder;
+        padding-bottom: 15px;
+        border-bottom: black solid 1px;
+    }
 
-.card img:hover {
-    transform: scale(0.95);
-  }
+    .options-taste {
+        text-align: center;
+        margin-top: 50px;
+        font-weight: 500;
+    }
 
-.text p{
-text-align: center;
-font-size: 16px;
-font-weight: bold;
-}
-.text :nth-child(2){
-    margin-top: -10px;
-}
+    .options-taste a {
+        text-decoration: inherit;
+        color: rgb(115, 115, 115);
+        margin-left: 60px;
+    }
 
-.button{
-    margin-left: 700px;
-    margin-bottom: 150px;
+    .card {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        border: none;
 
-}
-.page{
-    width: 30px;
-    background-color:white;
-    border: grey solid 0.5px;
-    margin-left: 22px;
-}
-.page a{
-    text-decoration: inherit;
-    color: black;
+    }
 
-}
+    .card img {
+        width: 100%;
+        height: 260px;
+        transition: 0.5s;
+    }
+
+    .card img:hover {
+        transform: scale(0.95);
+    }
+
+    .text p {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .text :nth-child(2) {
+        margin-top: -10px;
+    }
+
+    .button {
+        margin-left: 700px;
+        margin-bottom: 150px;
+
+    }
+
+    .page {
+        width: 30px;
+        background-color: white;
+        border: grey solid 0.5px;
+        margin-left: 22px;
+    }
+
+    .page a {
+        text-decoration: inherit;
+        color: black;
+
+    }
 
     /*----------------------頁尾------------------------- */
     .footer {
@@ -304,7 +334,7 @@ font-weight: bold;
         padding-left: 3px;
         color: #91997C;
     }
-    
+
 
     /* .copyright {
     font-size: 12px;
@@ -347,7 +377,7 @@ font-weight: bold;
                         <div class="options-taste">濃郁乳酪<a href="#">5</a></div>
                     </div>
                 </div>
-            
+
                 <div class="row col-9">
                     <div class="col-12 col-m-4 ">
                         <div class="card">
@@ -360,7 +390,7 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
@@ -372,7 +402,7 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
@@ -384,7 +414,7 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
@@ -396,7 +426,7 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
@@ -408,11 +438,11 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
-                               <img src="pexels-cats-coming-1098547.jpg" alt="抹茶奶香餅">
+                                <img src="pexels-cats-coming-1098547.jpg" alt="抹茶奶香餅">
                             </div>
                             <div class="text">
                                 <p>抹茶奶香餅</p>
@@ -420,7 +450,7 @@ font-weight: bold;
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-12 col-m-4 ">
                         <div class="card">
                             <div class="pic">
@@ -457,17 +487,17 @@ font-weight: bold;
                         </div>
                     </div>
                 </div>
-                
-                
+
+
             </div>
 
         </div>
     </div>
 
-<div class="button">
-    <button class="page"><a href="#">1</a></button>
-    <button class="page"><a href="#">2</a></button>
-</div>
+    <div class="button">
+        <button class="page"><a href="#">1</a></button>
+        <button class="page"><a href="#">2</a></button>
+    </div>
 
     <!--------------------------頁尾------------------------------>
     <footer class="footer">

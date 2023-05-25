@@ -193,13 +193,31 @@
     text-align: center;
     margin-top: 130px;
     margin-bottom: 50px;
+    position: relative;
   }
 
   .hot-title h2 {
     font-size: 26px;
     margin-bottom: 0;
   }
+  .hot-title h2::before,
+    .hot-title h2::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: 50%;
+        background: #666;
+        width: calc(50% - 160px);
+        
+    }
 
+    .hot-title h2::before {
+        left: 0;
+    }
+
+    .hot-title h2::after {
+        right: 0;
+    }
   .hot-title p {
     color: rgb(163, 163, 163);
     font-size: 22px;
@@ -380,6 +398,7 @@
   .delicious-title {
     text-align: center;
     padding-bottom: 90px;
+    position: relative;
   }
 
   .delicious-title h2 {
@@ -387,7 +406,23 @@
     margin-bottom: 0;
 
   }
+  .delicious-title h2::before,
+    .delicious-title h2::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: 20%;
+        background: #666;
+        width: calc(50% - 160px);
+    }
 
+    .delicious-title h2::before {
+        left: 0;
+    }
+
+    .delicious-title h2::after {
+        right: 0;
+    }
   .delicious-title p {
     color: rgb(163, 163, 163);
     font-size: 22px;
@@ -406,6 +441,7 @@
     white-space: nowrap;
     letter-spacing: 33px;
   }
+
 .delicious-art-left{
   writing-mode: vertical-rl;
     font-size: 34px;
@@ -507,13 +543,30 @@
   .baker-title {
     text-align: center;
     padding-bottom: 20px;
+    position: relative;
   }
 
   .baker-title h2 {
     font-size: 26px;
     margin-bottom: 0;
   }
+  .baker-title h2::before,
+    .baker-title h2::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: 35%;
+        background: #666;
+        width: calc(50% - 160px);
+    }
 
+    .baker-title h2::before {
+        left: 0;
+    }
+
+    .baker-title h2::after {
+        right: 0;
+    }
   .baker-title p {
     color: rgb(163, 163, 163);
     font-size: 22px;

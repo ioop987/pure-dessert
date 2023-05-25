@@ -20,13 +20,15 @@
   <!-- 連結CSS -->
   <link rel="stylesheet" href="slideshow.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
 </head>
 
 <style>
-    /* ----------------導覽列------------------ */
-    * {
+  /* ----------------導覽列------------------ */
+  * {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans TC', sans-serif;
@@ -105,26 +107,29 @@
   .fa-solid {
     font-size: 35px;
   }
-/* ----------------------赤心-------------------------- */
 
-.photo{
+  /* ----------------------赤心-------------------------- */
+
+  .photo {
     width: 1280px;
-    
-}
-.photo img{
+
+  }
+
+  .photo img {
     width: 100%;
-}
+  }
 
-.photo{
+  .photo {
     position: relative;
-}
+  }
 
-.photo-logo {
+  .photo-logo {
     position: absolute;
     top: 120px;
     left: 460px;
   }
-  .photo-logo img{
+
+  .photo-logo img {
     width: 500px;
     position: absolute;
     top: -20px;
@@ -182,31 +187,49 @@
     letter-spacing: 3px;
   }
 
-.text{
+  .text {
     width: 100%;
     margin: auto;
-    width: 62.5%;   
+    width: 62.5%;
     margin-top: 180px;
     margin-bottom: 500px;
-}
+    position: relative;
+  }
 
-.text h2{
+  .text h2 {
     width: 20%;
     text-align: center;
     margin: auto;
     font-size: 46px;
     font-weight: bold;
     margin-bottom: 70px;
+  }
+
+  .text h2::before,
+  .text h2::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    top: 8%;
+    background: #666;
+    width: calc(50% - 160px);
+  }
+  .text h2::before{
+  left: 0;
 }
-.text p{
+.text h2::after {
+  right: 0;
+}
+  .text p {
     font-size: 24px;
     letter-spacing: 4px;
     line-height: 2;
-}
+  }
 
-.text-background{
+  .text-background {
     width: 100%;
-}
+  }
+
   /*----------------------頁尾------------------------- */
   .footer {
     height: 173px;
@@ -281,7 +304,7 @@
     font-size: 12px;
     margin-top: 13px;
     margin-left: 25px;
-      font-weight: bold;
+    font-weight: bold;
   }
 
   .footer-fb {
@@ -311,56 +334,59 @@
     color: #91997C;
   }
 
-/* .copyright {
+  /* .copyright {
     font-size: 12px;
     text-align: center;
   } */
 </style>
+
 <body>
-     <!-- ----------導覽列------------- -->
-    <header class="main-header">
-        <div class="container">
-          <a href="index.html" class="logo">
-            <img src="LOGO.png" alt="赤心">
-          </a>
-          <nav class="main-nav">
-            <a href="about.html">關於我們</a>
-            <a href="product.html">所有商品</a>
-            <a href="news.html">最新消息</a>
-            <a href="shop.html">門市資訊</a>
-            <a href="login.html">會員登入</a>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            
-          </nav>
-    
-        </div>
-    </header>
+  <!-- ----------導覽列------------- -->
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="LOGO.png" alt="赤心">
+      </a>
+      <nav class="main-nav">
+        <a href="about.html">關於我們</a>
+        <a href="product.html">所有商品</a>
+        <a href="news.html">最新消息</a>
+        <a href="shop.html">門市資訊</a>
+        <a href="login.html">會員登入</a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+
+      </nav>
+
+    </div>
+  </header>
 
 
-<!-- --------------大圖------------------------ -->
-<div class="photo">
+  <!-- --------------大圖------------------------ -->
+  <div class="photo">
     <img src="螢幕擷取畫面 2023-05-08 143058.png" alt="赤心">
     <div class="photo-logo">
-        <img src="赤心LOGO2.png" alt="赤心">
-      </div>
-      <div class="photo-title">
-        <span class="photo-title-left">用一片赤誠的心意</span>
-        <span class="photo-title-right">為你送上最美好而純粹的甜點</span>
-      </div>
-      
-</div>
+      <img src="赤心LOGO2.png" alt="赤心">
+    </div>
+    <div class="photo-title">
+      <span class="photo-title-left">用一片赤誠的心意</span>
+      <span class="photo-title-right">為你送上最美好而純粹的甜點</span>
+    </div>
+
+  </div>
 
 
-<div class="text">
-   
+  <div class="text">
+
 
     <h2>赤心</h2>
-    <p>懷著將美味和溫暖帶給顧客的初心，創立了赤心甜點店。以赤心為店名，象徵著熱情和用心。每一份甜點都是對藝術的追求和對顧客的關愛的結晶。透過精心的創作和選用優質食材，我們的甜點瞬間征服了顧客的味蕾，贏得了無數的讚賞和追捧。赤心甜點店成為了年輕人追求夢想的典範，帶給人們一份獨特的甜蜜享受，讓每一個來訪的人都感受到熱情與愛。</p>
-</div>
+    <p>
+      懷著將美味和溫暖帶給顧客的初心，創立了赤心甜點店。以赤心為店名，象徵著熱情和用心。每一份甜點都是對藝術的追求和對顧客的關愛的結晶。透過精心的創作和選用優質食材，我們的甜點瞬間征服了顧客的味蕾，贏得了無數的讚賞和追捧。赤心甜點店成為了年輕人追求夢想的典範，帶給人們一份獨特的甜蜜享受，讓每一個來訪的人都感受到熱情與愛。
+    </p>
+  </div>
 
 
 
-        <!--------------------------頁尾------------------------------>
+  <!--------------------------頁尾------------------------------>
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-item">
@@ -411,7 +437,8 @@
       本網站為緯育TibaMe前端設計工程師班第xx期學員專題作品
     </div> -->
   </footer>
-    
+
 
 </body>
+
 </html>
