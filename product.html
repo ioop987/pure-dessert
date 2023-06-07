@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta charset="UTF-8">
+    <meta charset="UTF-3 col-xl-4">
     <!-- 響應式網站 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -82,6 +82,10 @@
         display: inline-block;
     }
 
+    .main-header .main-nav i {
+        font-size: 30px;
+    }
+
     /* ----------漂浮 ------------ */
     .main-header .main-nav a:hover {
         transform: translateY(-5px);
@@ -106,6 +110,148 @@
 
     .fa-solid {
         font-size: 35px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #menu-control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #b9ad90;
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+
+        .menu-btn span {
+            opacity: 0;
+        }
+
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px rgb(255, 255, 255),
+                0px -8px 0px rgb(255, 255, 255);
+            ;
+
+        }
+
+        .main-nav {
+            width: 100%;
+            height: calc(100vh - 50px);
+            background-color: #f7f1e2;
+            position: absolute;
+            top: 74px;
+            transition: 0.5s;
+            right: -100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-nav a {
+            display: block;
+            text-decoration: none;
+            background-color: #f7f1e2;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(3, 112, 10);
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        #menu-control:checked~.main-header nav {
+            right: 0;
+        }
+    }
+
+
+    @media screen and (max-width: 1024px) {
+        #menu-control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #b9ad90;
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+
+        .menu-btn span {
+            opacity: 0;
+        }
+
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px rgb(255, 255, 255),
+                0px -8px 0px rgb(255, 255, 255);
+            ;
+
+        }
+
+        .main-nav {
+            width: 100%;
+            height: calc(100vh - 50px);
+            background-color: #f7f1e2;
+            position: absolute;
+            top: 74px;
+            transition: 0.5s;
+            right: -100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-nav a {
+            display: block;
+            text-decoration: none;
+            background-color: #f7f1e2;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(3, 112, 10);
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        #menu-control:checked~.main-header nav {
+            right: 0;
+        }
+
     }
 
     /* -------------------所有商品-------------------------- */
@@ -181,7 +327,7 @@
     .options-taste a {
         text-decoration: inherit;
         color: rgb(115, 115, 115);
-        margin-left: 60px;
+        margin-left: 18px;
     }
 
     .card {
@@ -194,7 +340,6 @@
 
     .card img {
         width: 100%;
-        height: 260px;
         transition: 0.5s;
     }
 
@@ -212,9 +357,19 @@
         margin-top: -10px;
     }
 
+    .col-9 {
+        position: relative;
+    }
+
     .button {
-        margin-left: 700px;
-        margin-bottom: 150px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-75px);
+        width: 40%;
+
+        /* margin-left: 200px; */
+
 
     }
 
@@ -228,21 +383,27 @@
     .page a {
         text-decoration: inherit;
         color: black;
-
     }
+
 
     /*----------------------頁尾------------------------- */
     .footer {
-        height: 173px;
-        width: 1280px;
+        /* height: 173px; */
+        width: 100%;
         background-color: #D6D1C2;
-        margin: auto;
+
     }
 
     .footer-container {
-        margin-left: 40px;
-        padding-top: 20px;
+        padding: 30px;
         display: flex;
+        justify-content: space-between;
+
+    }
+
+    .footer-item {
+        min-width: 230px;
+
     }
 
     .footer-title {
@@ -272,13 +433,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 230px;
 
     }
 
     .footer-logo img {
         width: 230px;
-        margin-left: 270px;
-        margin-top: 10px;
+
 
     }
 
@@ -286,7 +447,8 @@
     .footer-icon {
         display: flex;
         flex-direction: column;
-        margin-left: 250px;
+        min-width: 170px;
+        width: 230px;
     }
 
     .footer-ig {
@@ -335,6 +497,115 @@
         color: #91997C;
     }
 
+    /* -------- */
+    @media screen and (max-width: 768px) {
+        .footer {
+            width: 100%;
+            background-color: #D6D1C2;
+            /* margin: auto; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-size: 18px;
+
+        }
+
+        .footer-info {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-item h4 {
+            color: #525B1B;
+            margin-top: 10px;
+
+        }
+
+        .footer-info p {
+            line-height: 0.5;
+            font-weight: 400;
+            color: #91997C;
+            margin-bottom: 14px;
+        }
+
+        .foter-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .footer-logo img {
+            width: 230px;
+            margin-left: 270px;
+            margin-top: 10px;
+
+        }
+
+
+        .footer-icon {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-ig {
+            display: flex;
+            color: #91997C;
+        }
+
+        .footer-ig-pic {
+            font-size: 45px;
+            margin-bottom: -10px;
+            margin-top: -10px;
+
+        }
+
+        .footer-ig-id {
+            font-size: 12px;
+            margin-top: 13px;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        .footer-fb {
+            display: flex;
+            margin-top: -5px;
+            color: #91997C;
+        }
+
+        .footer-fb-pic {
+            font-size: 40px;
+            margin-bottom: -10px;
+
+        }
+
+        .footer-fb-id {
+            font-size: 12px;
+            margin-top: 22px;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        .footer-credit {
+            font-size: 30px;
+            margin-top: -2px;
+            letter-spacing: 10px;
+            padding-left: 3px;
+            color: #91997C;
+        }
+    }
+
+
+    @media screen and (max-width: 1024px) {}
+
+    /* -------- */
 
     /* .copyright {
     font-size: 12px;
@@ -345,11 +616,15 @@
 <body>
     <link rel="stylesheet" href="grid.css">
     <!-- ----------導覽列------------- -->
+    <input type="checkbox" id="menu-control">
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="LOGO.png" alt="赤心">
             </a>
+            <label for="menu-control" class="menu-btn">
+                <span></span>
+            </label>
             <nav class="main-nav">
                 <a href="about.html">關於我們</a>
                 <a href="product.html">所有商品</a>
@@ -378,11 +653,11 @@
                     </div>
                 </div>
 
-                <div class="row col-9">
-                    <div class="col-12 col-m-4 ">
+                <dbiv class="row col-9">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="S__178659448.jpg" alt="抹茶千層蛋糕">
+                                <img src="抹茶千層260X260.jpg" alt="抹茶千層蛋糕">
                             </div>
                             <div class="text">
                                 <p>抹茶千層蛋糕</p>
@@ -391,10 +666,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="S__178659445.jpg" alt="抹茶毛巾捲">
+                                <img src="抹茶毛巾260X260.jpg" alt="抹茶毛巾捲">
                             </div>
                             <div class="text">
                                 <p>抹茶毛巾捲</p>
@@ -403,10 +678,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="S__178659445.jpg" alt="抹茶提拉米蘇盒">
+                                <img src="抹茶提拉米蘇260X260.jpg" alt="抹茶提拉米蘇盒">
                             </div>
                             <div class="text">
                                 <p>抹茶提拉米蘇盒</p>
@@ -415,10 +690,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="kalisha-ocheni-_BBTqanOrBI-unsplash.jpg" alt="草莓派對">
+                                <img src="草莓派對260X260.jpg" alt="草莓派對">
                             </div>
                             <div class="text">
                                 <p>草莓派對</p>
@@ -427,10 +702,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="pexels-meggy-kadam-aryanto-7892667.jpg" alt="抹茶大福">
+                                <img src="抹茶大福260X260.jpg" alt="抹茶大福">
                             </div>
                             <div class="text">
                                 <p>抹茶大福</p>
@@ -439,10 +714,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="pexels-cats-coming-1098547.jpg" alt="抹茶奶香餅">
+                                <img src="抹茶奶香餅260X260.jpg" alt="抹茶奶香餅">
                             </div>
                             <div class="text">
                                 <p>抹茶奶香餅</p>
@@ -451,10 +726,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="S__178659444.jpg" alt="抹茶夾心酥">
+                                <img src="抹茶夾心酥260X260.jpg" alt="抹茶夾心酥">
                             </div>
                             <div class="text">
                                 <p>抹茶夾心酥</p>
@@ -463,10 +738,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="pexels-ирина-янковая-11012687.jpg" alt="柑橘乳酪">
+                                <img src="柑橘乳酪260X260.jpg" alt="柑橘乳酪">
                             </div>
                             <div class="text">
                                 <p>柑橘乳酪</p>
@@ -475,10 +750,10 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-m-4 ">
+                    <div class="col-12 col-l-4 col-m-6">
                         <div class="card">
                             <div class="pic">
-                                <img src="eclair-3366430_1920.jpg" alt="草莓奶油泡芙">
+                                <img src="草莓奶油泡芙260X260.jpg" alt="草莓奶油泡芙">
                             </div>
                             <div class="text">
                                 <p>草莓奶油泡芙</p>
@@ -486,7 +761,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="button">
+                        <button class="page"><a href="#">1</a></button>
+                        <button class="page"><a href="#">2</a></button>
+                    </div>
+                </dbiv>
 
 
             </div>
@@ -494,10 +773,7 @@
         </div>
     </div>
 
-    <div class="button">
-        <button class="page"><a href="#">1</a></button>
-        <button class="page"><a href="#">2</a></button>
-    </div>
+
 
     <!--------------------------頁尾------------------------------>
     <footer class="footer">

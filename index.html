@@ -3,8 +3,10 @@
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
   <title>Slideshow 練習</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -22,991 +24,12 @@
 
   <!-- 連結CSS -->
   <link rel="stylesheet" href="slideshow.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 
-
-<style>
-
-  /* ----------------導覽列------------------ */
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Noto Serif TC', serif;
-  }
-
-  .main-header {
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    top: 0;
-
-  }
-
-  .main-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px;
-    max-width: 1280px;
-    margin: auto;
-
-  }
-
-  .main-header .logo {
-    width: 128px;
-  }
-
-  .main-header .logo img {
-    width: 100%;
-    vertical-align: middle;
-  }
-
-  .main-header .main-nav {
-    display: flex;
-    align-content: center;
-    font-size: 16px;
-    margin-left: auto;
-    /* 將主導覽列推到右邊 */
-  }
-
-  .main-header .main-nav a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 5px 1em;
-    position: relative;
-    transform: translateY(0px);
-    transition: 0.1s;
-    display: inline-block;
-  }
-
-  /* ----------漂浮 ------------ */
-  .main-header .main-nav a:hover {
-    transform: translateY(-5px);
-  }
-
-  /*---------- 底線 -----------*/
-  .main-header .main-nav a:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    height: 0;
-    bottom: -5px;
-    border-bottom: 1px solid rgb(3, 112, 10);
-    transition: 0.3s;
-  }
-
-  .main-header .main-nav a:hover:after {
-    left: 0;
-    right: 0;
-  }
-
-  .fa-solid {
-    font-size: 35px;
-  }
-
-  /* --------------輪播-------------- */
-
-  #slideshow {
-    width: 1280px;
-    margin: auto;
-  }
-
-  .slide-pic {
-    width: 100%;
-  }
-
-  .video {
-    width: 100%;
-    position: relative;
-  }
-
-  .video-text-logo  {
-    position: absolute;
-    top: 30px;
-    left: 80px;
-    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
-    text-shadow: 0px 0px 10px white;
-  }
-
-  .video-text-logo img{
-    position: absolute;
-    top: 10px;
-    left: -8px;
-    width: 400px;
-
-  }
-  .video-logo-left {
-    font-size: 200px;
-    color: #316740;
-
-  }
-
-  .video-logo-right {
-    font-size: 200px;
-    color: #316740;
-    position: absolute;
-    left: 160px;
-    top: 150px;
-  }
-
-  .video-title {
-    position: absolute;
-    top: 7px;
-    left: 620px;
-    display: flex;
-    flex-direction: column;
-    height: 1000px;
-    -webkit-text-stroke: 0.5px #767676;
-    text-shadow: 1px 2px 3px #BAE187;
-    font-weight: bolder;
-    letter-spacing: 5px;
-
-
-  }
-
-  .video-title-left {
-    writing-mode: vertical-rl;
-    transform: rotate(-360deg);
-    font-size: 34px;
-    position: absolute;
-    top: 90px;
-    color: white;
-
-
-  }
-
-  .video-title-right {
-    position: absolute;
-    writing-mode: vertical-rl;
-    transform: rotate(-360deg);
-    font-size: 30px;
-    left: 50px;
-    top: 140px;
-    color: white;
-    letter-spacing: 3px;
-  }
-
-  /* <!-- ------------------------熱門商品-------------------------> */
-  .hot-title {
-    text-align: center;
-    margin-top: 130px;
-    margin-bottom: 50px;
-    position: relative;
-  }
-
-  .hot-title h2 {
-    font-size: 26px;
-    margin-bottom: 0;
-  }
-  .hot-title h2::before,
-    .hot-title h2::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        top: 50%;
-        background: #666;
-        width: calc(50% - 160px);
-        
-    }
-
-    .hot-title h2::before {
-        left: 0;
-    }
-
-    .hot-title h2::after {
-        right: 0;
-    }
-  .hot-title p {
-    color: rgb(163, 163, 163);
-    font-size: 22px;
-  }
-
-  .hot {
-    display: flex;
-    margin-top: 70px;
-    flex-wrap: wrap;
-    width: 1280PX;
-    height: 814px;
-    margin: auto;
-
-
-    position: relative;
-    overflow: hidden;
-    transition: all 1s;
-  }
-
-  .hot-card-top {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-
-    transition: all 1s;
-    position: absolute;
-    right: -1280px;
-
-  }
-
-  .hot-pic-options-top a {
-    color: white;
-    text-decoration: inherit;
-  }
-
-  .hot:hover .hot-card-top {
-    right: 0px;
-  }
-
-  .hot-item-top {
-    width: 320px;
-    height: 400px;
-  }
-
-  .hot-pic-top {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .hot-pic-top img {
-    width: 320px;
-    height: 400px;
-    transition: 0.5s;
-  }
-
-  .hot-pic-top img:hover {
-    transform: scale(1.2);
-  }
-
-  .hot-pic-options-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    /* 設置背景顏色和透明度 */
-    /* padding: 30px; */
-    width: 100%;
-    height: 98px;
-
-  }
-
-  .hot-pic-options-top:hover {
-    background-color: rgba(255, 1, 1, 0.3);
-  }
-
-  .hot-pic-options-top:hover .hot-pic-text {
-    transform: scale(1.1);
-  }
-
-  .hot-card-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-
-    transition: all 1s;
-    position: absolute;
-    left: -1280px;
-    top: 400px;
-  }
-
-  .hot:hover .hot-card-bottom {
-    left: 0px;
-  }
-
-  .hot-item-bottom {
-    width: 426px;
-    height: 414px;
-  }
-
-  .hot-pic-bottom {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .hot-pic-bottom img {
-    width: 426px;
-    height: 414px;
-    transition: 0.5s;
-  }
-
-  .hot-pic-bottom img:hover {
-    transform: scale(1.2);
-  }
-
-  .hot-pic-options-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    /* 設置背景顏色和透明度 */
-    /* padding: 30px; */
-    width: 100%;
-    height: 98px;
-  }
-
-  .hot-pic-options-bottom a {
-    color: white;
-    text-decoration: inherit;
-  }
-
-  .hot-pic-options-bottom:hover {
-    background-color: rgba(255, 1, 1, 0.3);
-  }
-
-  .hot-pic-options-bottom:hover .hot-pic-text {
-    transform: scale(1.1);
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* --------------------------好吃的祕密---------------------------------- */
-
-  .delicious {
-    width: 1280px;
-    height: 1900px;
-    background: #EFE9DC;
-    padding-top: 130px;
-    margin: auto;
-  }
-
-  .delicious-title {
-    text-align: center;
-    padding-bottom: 90px;
-    position: relative;
-  }
-
-  .delicious-title h2 {
-    font-size: 26px;
-    margin-bottom: 0;
-
-  }
-  .delicious-title h2::before,
-    .delicious-title h2::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        top: 20%;
-        background: #666;
-        width: calc(50% - 160px);
-    }
-
-    .delicious-title h2::before {
-        left: 0;
-    }
-
-    .delicious-title h2::after {
-        right: 0;
-    }
-  .delicious-title p {
-    color: rgb(163, 163, 163);
-    font-size: 22px;
-  }
-  .delicious-art{
-    position: relative;
-  }
-  .delicious-art-right{
-    writing-mode: vertical-rl;
-    font-size: 34px;
-    position: absolute;
-    left: 1190px;
-    top: -10px;
-    display: inline-block;
-    transform: rotate(-360deg);
-    white-space: nowrap;
-    letter-spacing: 33px;
-  }
-
-.delicious-art-left{
-  writing-mode: vertical-rl;
-    font-size: 34px;
-    position: absolute;
-    left: 34px;
-    top:700px;
-    display: inline-block;
-    transform: rotate(-360deg);
-    white-space: nowrap;
-    letter-spacing: 33px;
-}
-
-
-  .delicious-card-left {
-    display: flex;
-    background: #FCF7EB;
-    width: 859px;
-    height: 355px;
-    align-items: center;
-    margin-left: 310px;
-    margin-bottom: 160px;
-  }
-
-  .delicious-card-left img {
-    width: 445px;
-    height: 335px;
-  }
-
-  .delicious-pic-left {
-    position: relative;
-    top: 107px;
-    right: 168px;
-  }
-
-  .delicious-txt-left {
-    position: relative;
-    right: 130px;
-  }
-
-  .delicious-txt-left h2 {
-    margin-bottom: 50px;
-    margin-top: 20px;
-    font-size: 36px;
-  }
-
-  .delicious-txt-left p {
-    font-size: 20px;
-  }
-
-  .delicious-card-right {
-    display: flex;
-    background: #FCF7EB;
-    width: 859px;
-    height: 355px;
-    align-items: center;
-    margin-left: 112px;
-    margin-bottom: 160px;
-  }
-
-  .delicious-card-right img {
-    width: 445px;
-    height: 335px;
-  }
-
-  .delicious-pic-right {
-    position: relative;
-    top: 107px;
-    left: 338px;
-  }
-
-  .delicious-txt-right {
-    position: relative;
-    left: 70px;
-  }
-
-  .delicious-txt-right h2 {
-    margin-top: 20px;
-    margin-bottom: 50px;
-    font-size: 36px;
-  }
-
-  .delicious-txt-right p {
-    font-size: 20px;
-  }
-
-
-  .delicious-pic-left-up {
-    position: relative;
-    bottom: 107px;
-    right: 168px;
-  }
-
-  .decorate-right {
-    width: 20px;
-  }
-
-  /* -------------------------甜點師-------------------------------- */
-
-  .baker-title {
-    text-align: center;
-    padding-bottom: 20px;
-    position: relative;
-  }
-
-  .baker-title h2 {
-    font-size: 26px;
-    margin-bottom: 0;
-  }
-  .baker-title h2::before,
-    .baker-title h2::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        top: 35%;
-        background: #666;
-        width: calc(50% - 160px);
-    }
-
-    .baker-title h2::before {
-        left: 0;
-    }
-
-    .baker-title h2::after {
-        right: 0;
-    }
-  .baker-title p {
-    color: rgb(163, 163, 163);
-    font-size: 22px;
-  }
-
-  .baker-title {
-    margin-top: 50px;
-  }
-
-  .baker-item {
-    width: 1280px;
-    height: 1650px;
-    margin: auto;
-  }
-
-  .baker-card-long {
-    display: flex;
-  }
-
-  .baker-pic-long {
-    margin-top: 110px;
-    margin-left: 150px;
-    background-color: rgb(255, 255, 255);
-    width: 440px;
-    height: 486px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
-    transform: rotate(-3deg);
-  }
-
-  .baker-pic-long img {
-    width: 390px;
-    height: 426px;
-  }
-
-  .baker-resume-long {
-    background-color: rgba(255, 255, 255, 0.724);
-    width: 587px;
-    height: 296px;
-    margin-top: 205px;
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .baker-resume-long li {
-    margin-left: 70px;
-  }
-
-  .baker-resume-long h3 {
-    margin-bottom: 40px;
-    margin-left: 90px;
-
-  }
-
-  .baker-card-width {
-    display: flex;
-    margin-top: 60px;
-  }
-
-  .baker-pic-width {
-    margin-top: 25px;
-    margin-left: 70px;
-    background-color: rgb(255, 255, 255);
-    width: 530px;
-    height: 379px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
-    transform: rotate(2deg);
-
-  }
-
-  .baker-pic-width img {
-    width: 480px;
-    height: 320px;
-  }
-
-  .baker-resume-width {
-    background-color: rgba(255, 255, 255, 0.724);
-    width: 587px;
-    height: 296px;
-    margin-top: 76px;
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .baker-resume-width li {
-    margin-left: 70px;
-  }
-
-  .baker-resume-width h3 {
-    margin-bottom: 40px;
-    margin-left: 90px;
-  }
-
-  .baker-card-width-right {
-    display: flex;
-    margin-top: 50px;
-  }
-
-  .baker-pic-width-right {
-    margin-top: 0px;
-    margin-left: 10px;
-    background-color: rgb(255, 255, 255);
-    width: 530px;
-    height: 379px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
-    transform: rotate(-2deg);
-  }
-
-  .baker-pic-width-right img {
-    width: 480px;
-    height: 320px;
-  }
-
-  .baker-resume-width-right {
-    background-color: rgba(255, 255, 255, 0.724);
-    width: 587px;
-    height: 296px;
-    margin-top: 51px;
-    margin-left: 80px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .baker-resume-width-right li {
-    margin-left: 70px;
-  }
-
-  .baker-resume-width-right h3 {
-    margin-bottom: 40px;
-    margin-left: 90px;
-  }
-
-  /* <!--------------------評論----------------------------- --> */
-  .marquee {
-    height: 210px;
-    width: 1280px;
-    display: flex;
-    margin: auto;
-    overflow: hidden;
-    justify-content: center;
-
-  }
-
-  .comment {
-    display: flex;
-    width: 450px;
-    height: 120px;
-    margin-top: 100px;
-    animation: scroll 15s linear infinite;
-  }
-
-  .comment-photo-mj {
-    width: 85px;
-    height: 85px;
-    background-color: red;
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  .comment-photo-kb {
-    width: 85px;
-    height: 85px;
-    background-color: rgb(255, 170, 0);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  .comment-photo-lbj {
-    width: 85px;
-    height: 85px;
-    background-color: rgb(255, 0, 111);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  .marquee-reverse {
-    height: 500px;
-    width: 1280px;
-    display: flex;
-    margin: auto;
-    overflow: hidden;
-
-
-  }
-
-  .comment-reverse {
-    display: flex;
-    width: 450px;
-    height: 120px;
-    margin-top: 100px;
-    animation: scroll2 15s linear infinite;
-    animation-delay: -3s;
-
-
-  }
-
-  .comment-photo-super {
-    width: 85px;
-    height: 85px;
-    background-color: rgb(238, 255, 0);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  .comment-photo-bat {
-    width: 85px;
-    height: 85px;
-    background-color: rgb(204, 0, 255);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  .comment-photo-iron {
-    width: 85px;
-    height: 85px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: white;
-    font-size: 30px;
-  }
-
-  @keyframes scroll {
-    from {
-      transform: translateX(350%)
-    }
-
-    to {
-      transform: translateX(-300%)
-    }
-  }
-
-  @keyframes scroll2 {
-    from {
-      transform: translateX(-300%)
-    }
-
-    to {
-      transform: translateX(350%)
-    }
-  }
-
-  .comment-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 30px;
-  }
-
-  .comment-name {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 16px;
-  }
-
-  .comment-text {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .comment-star {
-    position: relative;
-    right: 114px;
-    vertical-align: middle;
-    display: inline-block;
-    color: #ddd;
-    /*背景星星顏色*/
-    overflow: hidden;
-    font-size: 30px;
-    /*調整字體大小可放大縮小星星*/
-    letter-spacing: 7px;
-  }
-
-  .comment-star-full {
-    width: 100%;
-    /*調整寬度可變更星等*/
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #ffe600;
-    /*前景星星顏色*/
-  }
-
-  /*----------------------頁尾------------------------- */
-  .footer {
-    height: 173px;
-    width: 1280px;
-    background-color: #D6D1C2;
-    margin: auto;
-  }
-
-  .footer-container {
-    margin-left: 40px;
-    padding-top: 20px;
-    display: flex;
-  }
-
-  .footer-title {
-    font-size: 18px;
-
-  }
-
-  .footer-info {
-    font-size: 12px;
-    margin-top: 15px;
-  }
-
-  .footer-item h4 {
-    color: #525B1B;
-    margin-top: 10px;
-
-  }
-
-  .footer-info p {
-    line-height: 0.5;
-    font-weight: 400;
-    color: #91997C;
-    margin-bottom: 14px;
-  }
-
-  .foter-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  .footer-logo img {
-    width: 230px;
-    margin-left: 270px;
-    margin-top: 10px;
-
-  }
-
-
-  .footer-icon {
-    display: flex;
-    flex-direction: column;
-    margin-left: 250px;
-  }
-
-  .footer-ig {
-    display: flex;
-    color: #91997C;
-  }
-
-  .footer-ig-pic {
-    font-size: 45px;
-    margin-bottom: -10px;
-    margin-top: -10px;
-
-  }
-
-  .footer-ig-id {
-    font-size: 12px;
-    margin-top: 13px;
-    margin-left: 25px;
-      font-weight: bold;
-  }
-
-  .footer-fb {
-    display: flex;
-    margin-top: -5px;
-    color: #91997C;
-  }
-
-  .footer-fb-pic {
-    font-size: 40px;
-    margin-bottom: -10px;
-
-  }
-
-  .footer-fb-id {
-    font-size: 12px;
-    margin-top: 22px;
-    margin-left: 25px;
-    font-weight: bold;
-  }
-
-  .footer-credit {
-    font-size: 30px;
-    margin-top: -2px;
-    letter-spacing: 10px;
-    padding-left: 3px;
-    color: #91997C;
-  }
-
-
-
-  /* .copyright {
-    font-size: 12px;
-    text-align: center;
-  } */
-</style>
-
-
-
-
-
-
 <body>
-   <!-- ----------導覽列------------- -->
-   <header class="main-header">
+  <!-- ----------導覽列------------- -->
+  <header class="main-header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="LOGO.png" alt="赤心">
@@ -1018,11 +41,11 @@
         <a href="shop.html">門市資訊</a>
         <a href="login.html">會員登入</a>
         <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        
+
       </nav>
 
     </div>
-</header>
+  </header>
 
 
 
@@ -1031,7 +54,7 @@
     <!-- 圖片投影 元件１-->
     <div class="carousel-inner">
       <!-- 第一張圖片 active　-->
-      <div class="carousel-item active">
+      <div class="carousel-item-active">
         <video class="video" autoplay muted loop playsinline>
           <source src="video.mp4">
         </video>
@@ -1094,35 +117,43 @@
     <div class="hot-card-top">
       <div class="hot-item-top">
         <div class="hot-pic-top">
-          <img src="pexels-ирина-янковая-11012687.jpg" alt="柑橘乳酪蛋糕">
-          <div class="hot-pic-options-top">
-            <a href="#" class="hot-pic-text">柑橘乳酪</a>
-          </div>
+          <img src="柑橘乳酪320x400.jpg" alt="柑橘乳酪蛋糕">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-top">
+              柑橘乳酪
+            </div>
+          </a>
         </div>
       </div>
 
       <div class="hot-item-top">
         <div class="hot-pic-top">
-          <img src="aliona-gumeniuk-GAauSStia3s-unsplash.jpg" alt="黑糖乳酪蛋糕">
-          <div class="hot-pic-options-top">
-            <a href="#" class="hot-pic-text">黑糖乳酪</a>
-          </div>
+          <img src="黑糖乳酪320x400.jpg" alt="黑糖乳酪蛋糕">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-top">
+              黑糖乳酪
+            </div>
+          </a>
         </div>
       </div>
       <div class="hot-item-top">
         <div class="hot-pic-top">
-          <img src="julia-peretiatko-oXfOK1ymtPU-unsplash.jpg" alt="草莓派對">
-          <div class="hot-pic-options-top">
-            <a href="#" class="hot-pic-text">草莓派對</a>
-          </div>
+          <img src="草莓派對320x400.jpg" alt="草莓派對">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-top">
+              草莓派對
+            </div>
+          </a>
         </div>
       </div>
       <div class="hot-item-top">
         <div class="hot-pic-top">
-          <img src="pexels-marta-dzedyshko-7451887.jpg  " alt="">
-          <div class="hot-pic-options-top">
-            <a href="#" class="hot-pic-text">原味乳酪派</a>
-          </div>
+          <img src="原味乳酪派.jpg" alt="原味乳酪派">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-top">
+              原味乳酪派
+            </div>
+          </a>
         </div>
       </div>
 
@@ -1133,27 +164,33 @@
 
       <div class="hot-item-bottom">
         <div class="hot-pic-bottom">
-          <img src="S__178659445.jpg" alt="">
-          <div class="hot-pic-options-bottom">
-            <a href="#" class="hot-pic-text">抹茶毛巾捲</a>
-          </div>
+          <img src="抹茶毛巾426x414.jpg" alt="抹茶毛巾捲">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-bottom">
+              抹茶毛巾捲
+            </div>
+          </a>
         </div>
       </div>
 
       <div class="hot-item-bottom">
         <div class="hot-pic-bottom">
-          <img src="S__178659447.jpg" alt="">
-          <div class="hot-pic-options-bottom">
-            <a href="#" class="hot-pic-text">抹茶提拉米蘇盒</a>
-          </div>
+          <img src="抹茶提拉米蘇426x414.jpg" alt="">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-bottom">
+              抹茶提拉米蘇盒
+            </div>
+          </a>
         </div>
       </div>
       <div class="hot-item-bottom">
         <div class="hot-pic-bottom">
-          <img src="S__178659448.jpg" alt="">
-          <div class="hot-pic-options-bottom">
-            <a href="#" class="hot-pic-text">抹茶千層</a>
-          </div>
+          <img src="抹茶千層426x414.jpg" alt="抹茶千層">
+          <a href="#" class="hot-pic-text">
+            <div class="hot-pic-options-bottom">
+              抹茶千層
+            </div>
+          </a>
         </div>
       </div>
 
@@ -1312,7 +349,7 @@
         </div>
       </div>
     </div>
-  
+
   </div>
 
 
