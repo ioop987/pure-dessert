@@ -29,91 +29,241 @@
 <style>
   /* ----------------導覽列------------------ */
   * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Noto Serif TC', serif;
-  }
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-family: 'Noto Serif TC', serif;
+    }
+    #menu-control{
+      display: none;
+    }
+
+    .main-header {
+          /* position: fixed; */
+        z-index: 999;
+        width: 100%;
+        top: 0;
+        background-color: #e8e3d4;
+
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px;
+        max-width: 1280px;
+        margin: auto;
+
+    }
+
+    .main-header .logo {
+        width: 128px;
+    }
+
+    .main-header .logo img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .main-header .main-nav {
+        display: flex;
+        align-content: center;
+        font-size: 16px;
+        margin-left: auto;
+        /* 將主導覽列推到右邊 */
+    }
+
+    .main-header .main-nav a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: 0.1s;
+        display: inline-block;
+    }
+
+    .main-header .main-nav i {
+        font-size: 30px;
+    }
+
+    /* ----------漂浮 ------------ */
+    .main-header .main-nav a:hover {
+        transform: translateY(-5px);
+    }
+
+    /*---------- 底線 -----------*/
+    .main-header .main-nav a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        height: 0;
+        bottom: -5px;
+        border-bottom: 1px solid rgb(3, 112, 10);
+        transition: 0.3s;
+    }
+
+    .main-header .main-nav a:hover:after {
+        left: 0;
+        right: 0;
+    }
+
+    .fa-solid {
+        font-size: 35px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #menu-control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #b9ad90;
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+
+        .menu-btn span {
+            opacity: 0;
+        }
+
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px rgb(255, 255, 255),
+                0px -8px 0px rgb(255, 255, 255);
+            ;
+
+        }
+
+        .main-nav {
+            width: 100%;
+            height: calc(100vh - 50px);
+            background-color: #f7f1e2;
+            position: absolute;
+            top: 74px;
+            transition: 0.5s;
+            right: -100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-nav a {
+            display: block;
+            text-decoration: none;
+            background-color: #f7f1e2;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(3, 112, 10);
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        #menu-control:checked~.main-header nav {
+            right: 0;
+        }
+    }
 
 
-  .main-header {
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    top: 0;
-    background-color: #e8e3d4;
+    @media screen and (max-width: 1024px) {
+        #menu-control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
 
-  }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
 
-  .main-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px;
-    max-width: 1280px;
-    margin: auto;
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #b9ad90;
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
 
-  }
+        .menu-btn span {
+            opacity: 0;
+        }
 
-  .main-header .logo {
-    width: 128px;
-  }
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px rgb(255, 255, 255),
+                0px -8px 0px rgb(255, 255, 255);
+            ;
 
-  .main-header .logo img {
-    width: 100%;
-    vertical-align: middle;
-  }
+        }
 
-  .main-header .main-nav {
-    display: flex;
-    align-content: center;
-    font-size: 16px;
-    margin-left: auto;
-    /* 將主導覽列推到右邊 */
-  }
+        .main-nav {
+            width: 100%;
+            height: calc(100vh - 50px);
+            background-color: #f7f1e2;
+            position: absolute;
+            top: 74px;
+            transition: 0.5s;
+            right: -100%;
+            display: flex;
+            flex-direction: column;
+            z-index: 4  ;
+        }
 
-  .main-header .main-nav a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 5px 1em;
-    position: relative;
-    transform: translateY(0px);
-    transition: 0.1s;
-    display: inline-block;
-  }
-  .main-header .main-nav i {
-    font-size: 30px;
-  }
-  /* ----------漂浮 ------------ */
-  .main-header .main-nav a:hover {
-    transform: translateY(-5px);
-  }
+        .main-nav a {
+            display: block;
+            text-decoration: none;
+            background-color: #f7f1e2;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(3, 112, 10);
+            text-align: center;
 
-  /*---------- 底線 -----------*/
-  .main-header .main-nav a:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    height: 0;
-    bottom: -5px;
-    border-bottom: 1px solid rgb(3, 112, 10);
-    transition: 0.3s;
-  }
+            margin-bottom: 20px;
+        }
 
-  .main-header .main-nav a:hover:after {
-    left: 0;
-    right: 0;
-  }
+        #menu-control:checked~.main-header nav {
+            right: 0;
+        }
 
-  .fa-solid {
-    font-size: 35px;
-  }
+    }
 
   /* ----------------------赤心-------------------------- */
 
   .photo {
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
 
   }
 
@@ -121,21 +271,17 @@
     width: 100%;
   }
 
-  .photo {
-    position: relative;
-  }
-
   .photo-logo {
     position: absolute;
-    top: 120px;
-    left: 460px;
+    top: 7%;
+    left: 4%;
+    width: 40%;
   }
 
   .photo-logo img {
-    width: 500px;
     position: absolute;
-    top: -20px;
-    left: -55px;
+    left: 68%;
+    width: 100%;
   }
 
   .photo-logo-left {
@@ -154,39 +300,15 @@
 
   .photo-title {
     position: absolute;
-    top: 7px;
-    left: 1070px;
-    display: flex;
-    flex-direction: column;
-    height: 1000px;
-    -webkit-text-stroke: 0.5px #767676;
-    text-shadow: 1px 2px 3px #e18d87;
-    font-weight: bolder;
-    letter-spacing: 5px;
-
-
+    top: 2%;
+    left: 78%;
+    width: 30%;
+   
   }
 
-  .photo-title-left {
-    writing-mode: vertical-rl;
-    transform: rotate(-360deg);
-    font-size: 34px;
+  .photo-title img{
     position: absolute;
-    top: 90px;
-    color: rgb(255, 255, 255);
-
-
-  }
-
-  .photo-title-right {
-    position: absolute;
-    writing-mode: vertical-rl;
-    transform: rotate(-360deg);
-    font-size: 30px;
-    left: 50px;
-    top: 140px;
-    color: rgb(255, 255, 255);
-    letter-spacing: 3px;
+    width: 53%;
   }
 
   .text {
@@ -196,6 +318,7 @@
     margin-top: 180px;
     margin-bottom: 500px;
     position: relative;
+    max-width: 1280px;
   }
 
   .text h2 {
@@ -231,110 +354,253 @@
   .text-background {
     width: 100%;
   }
+  @media screen and (max-width: 768px) {
+   .text h2{
+    white-space: nowrap; 
+   }
 
+  }
   /*----------------------頁尾------------------------- */
   .footer {
-    height: 173px;
-    width: 1280px;
-    background-color: #D6D1C2;
+        /* height: 173px; */
+        width: 100%;
+        background-color: #D6D1C2;
+
+    }
+
+    .footer-container {
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1280px;
     margin: auto;
-  }
+    }
 
-  .footer-container {
-    margin-left: 40px;
-    padding-top: 20px;
-    display: flex;
-  }
+    .footer-item {
+        min-width: 230px;
 
-  .footer-title {
-    font-size: 18px;
+    }
 
-  }
+    .footer-title {
+        font-size: 18px;
 
-  .footer-info {
-    font-size: 12px;
-    margin-top: 15px;
-  }
+    }
 
-  .footer-item h4 {
-    color: #525B1B;
-    margin-top: 10px;
+    .footer-info {
+        font-size: 12px;
+        margin-top: 15px;
+    }
 
-  }
+    .footer-item h4 {
+        color: #525B1B;
+        margin-top: 10px;
 
-  .footer-info p {
-    line-height: 0.5;
-    font-weight: 400;
-    color: #91997C;
-    margin-bottom: 14px;
-  }
+    }
 
-  .foter-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .footer-info p {
+        line-height: 0.5;
+        font-weight: 400;
+        color: #91997C;
+        margin-bottom: 14px;
+    }
 
-  }
+    .foter-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
 
-  .footer-logo img {
-    width: 230px;
-    margin-left: 270px;
-    margin-top: 10px;
+    }
 
-  }
+    .footer-logo img {
+        width: 230px;
+
+    }
 
 
-  .footer-icon {
-    display: flex;
-    flex-direction: column;
-    margin-left: 250px;
-  }
+    .footer-icon {
+        display: flex;
+        flex-direction: column;
+        min-width: 170px;
+        width: 230px;
+    }
 
-  .footer-ig {
-    display: flex;
-    color: #91997C;
-  }
+    .footer-ig {
+        display: flex;
+        color: #91997C;
+    }
 
-  .footer-ig-pic {
-    font-size: 45px;
-    margin-bottom: -10px;
-    margin-top: -10px;
+    .footer-ig-pic {
+        font-size: 45px;
+        margin-bottom: -10px;
+        margin-top: -10px;
 
-  }
+    }
 
-  .footer-ig-id {
-    font-size: 12px;
-    margin-top: 13px;
-    margin-left: 25px;
-    font-weight: bold;
-  }
+    .footer-ig-id {
+        font-size: 12px;
+        margin-top: 13px;
+        margin-left: 25px;
+        font-weight: bold;
+    }
 
-  .footer-fb {
-    display: flex;
-    margin-top: -5px;
-    color: #91997C;
-  }
+    .footer-fb {
+        display: flex;
+        margin-top: -5px;
+        color: #91997C;
+    }
 
-  .footer-fb-pic {
-    font-size: 40px;
-    margin-bottom: -10px;
+    .footer-fb-pic {
+        font-size: 40px;
+        margin-bottom: -10px;
 
-  }
+    }
 
-  .footer-fb-id {
-    font-size: 12px;
-    margin-top: 22px;
-    margin-left: 25px;
-    font-weight: bold;
-  }
+    .footer-fb-id {
+        font-size: 12px;
+        margin-top: 22px;
+        margin-left: 25px;
+        font-weight: bold;
+    }
 
-  .footer-credit {
-    font-size: 30px;
-    margin-top: -2px;
-    letter-spacing: 10px;
-    padding-left: 3px;
-    color: #91997C;
-  }
+    .footer-credit {
+        font-size: 30px;
+        margin-top: -2px;
+        letter-spacing: 10px;
+        padding-left: 3px;
+        color: #91997C;
+    }
+
+    /* -------- */
+    @media screen and (max-width: 1024px) {
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .footer {
+            width: 100%;
+            background-color: #D6D1C2;
+            /* margin: auto; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-container {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-size: 18px;
+
+        }
+
+        .footer-info {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-item {
+            order: 2;
+            transform: translateX(0px);
+
+        }
+
+        .footer-item h4 {
+            color: #525B1B;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-info p {
+            line-height: 0.5;
+            font-weight: 400;
+            color: #91997C;
+            margin-bottom: 14px;
+
+        }
+
+        .foter-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .footer-logo img {
+            width: 230px;
+            margin-top: 10px;
+
+        }
+
+
+        .footer-icon {
+            display: flex;
+            flex-direction: column;
+            order: 1;
+padding: 50px 0;        }
+
+        .footer-ig {
+            display: flex;
+            color: #91997C;
+            transform: translateX(30px);
+        }
+
+        .footer-ig-pic {
+            font-size: 45px;
+            margin-bottom: -10px;
+            margin-top: -10px;
+
+        }
+
+        .footer-ig-id {
+            font-size: 12px;
+            margin-top: 13px;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        .footer-fb {
+            display: flex;
+            margin-top: -5px;
+            color: #91997C;
+            transform: translateX(30px);
+
+        }
+
+        .footer-fb-pic {
+            font-size: 40px;
+            margin-bottom: -10px;
+
+        }
+
+        .footer-fb-id {
+            font-size: 12px;
+            margin-top: 22px;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        .footer-credit {
+            font-size: 30px;
+            margin-top: -2px;
+            letter-spacing: 10px;
+            padding-left: 3px;
+            color: #91997C;
+            transform: translateX(30px);
+
+        }
+    }
 
   /* .copyright {
     font-size: 12px;
@@ -344,11 +610,15 @@
 
 <body>
   <!-- ----------導覽列------------- -->
+  <input type="checkbox" id="menu-control">
   <header class="main-header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="LOGO.png" alt="赤心">
       </a>
+      <label for="menu-control" class="menu-btn">
+        <span></span>
+    </label>
       <nav class="main-nav">
         <a href="about.html">關於我們</a>
         <a href="product.html">所有商品</a>
@@ -370,8 +640,7 @@
       <img src="赤心LOGO2.png" alt="赤心">
     </div>
     <div class="photo-title">
-      <span class="photo-title-left">用一片赤誠的心意</span>
-      <span class="photo-title-right">為你送上最美好而純粹的甜點</span>
+      <img src="赤心title-red.png" alt="litle">
     </div>
 
   </div>

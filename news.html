@@ -20,8 +20,10 @@
   <!-- 連結CSS -->
   <link rel="stylesheet" href="slideshow.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
 </head>
 
 <style>
@@ -32,6 +34,7 @@
     font-family: 'Noto Sans TC', sans-serif;
     font-family: 'Noto Serif TC', serif;
   }
+
 
   .main-header {
     position: fixed;
@@ -78,34 +81,10 @@
     transition: 0.1s;
     display: inline-block;
   }
+
   .main-header .main-nav i {
     font-size: 30px;
   }
-  /* ----------漂浮 ------------ */
-  .main-header .main-nav a:hover {
-    transform: translateY(-5px);
-  }
-
-  /*---------- 底線 -----------*/
-  .main-header .main-nav a:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    height: 0;
-    bottom: -5px;
-    border-bottom: 1px solid rgb(3, 112, 10);
-    transition: 0.3s;
-  }
-
-  .main-header .main-nav a:hover:after {
-    left: 0;
-    right: 0;
-  }
-
-  .fa-solid {
-    font-size: 35px;
-  }
 
   /* ----------漂浮 ------------ */
   .main-header .main-nav a:hover {
@@ -131,6 +110,148 @@
 
   .fa-solid {
     font-size: 35px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #menu-control {
+      position: absolute;
+      z-index: -2;
+      opacity: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-btn {
+      width: 40px;
+      height: 40px;
+      background-color: #b9ad90;
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
+
+    .menu-btn span {
+      opacity: 0;
+    }
+
+    .menu-btn::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      left: 2px;
+      width: 36px;
+      background-color: #ffffff;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      box-shadow: 0px 8px 0px rgb(255, 255, 255),
+        0px -8px 0px rgb(255, 255, 255);
+      ;
+
+    }
+
+    .main-nav {
+      width: 100%;
+      height: calc(100vh - 50px);
+      background-color: #f7f1e2;
+      position: absolute;
+      top: 74px;
+      transition: 0.5s;
+      right: -100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+      background-color: #f7f1e2;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgb(3, 112, 10);
+      text-align: center;
+
+      margin-bottom: 20px;
+    }
+
+    #menu-control:checked~.main-header nav {
+      right: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    #menu-control {
+      position: absolute;
+      z-index: -2;
+      opacity: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-btn {
+      width: 40px;
+      height: 40px;
+      background-color: #b9ad90;
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
+
+    .menu-btn span {
+      opacity: 0;
+    }
+
+    .menu-btn::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      left: 2px;
+      width: 36px;
+      background-color: #ffffff;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      box-shadow: 0px 8px 0px rgb(255, 255, 255),
+        0px -8px 0px rgb(255, 255, 255);
+      ;
+
+    }
+
+    .main-nav {
+      width: 100%;
+      height: calc(100vh - 50px);
+      background-color: #f7f1e2;
+      position: absolute;
+      top: 74px;
+      transition: 0.5s;
+      right: -100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+      background-color: #f7f1e2;
+      padding: 10px 20px;
+      border-bottom: 1px solid rgb(3, 112, 10);
+      text-align: center;
+
+      margin-bottom: 20px;
+    }
+
+    #menu-control:checked~.main-header nav {
+      right: 0;
+    }
+
   }
 
   /* ------------------------news-------------------------- */
@@ -147,24 +268,28 @@
     font-size: 24px;
     font-weight: bold;
   }
-  .title h2::before,
-.title h2::after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  top: 50%;
-  background: #666;
-  width: calc(50% - 160px);
-}
 
-.title h2::before{
-  left: 0;
-}
-.title h2::after {
-  right: 0;
-}
+  .title h2::before,
+  .title h2::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    top: 50%;
+    background: #666;
+    width: calc(50% - 160px);
+  }
+
+  .title h2::before {
+    left: 0;
+  }
+
+  .title h2::after {
+    right: 0;
+  }
+
   .news {
     margin-bottom: 100px;
+    position: relative;
   }
 
   .card {
@@ -188,6 +313,10 @@
     margin-top: 30px;
   }
 
+  .pic {
+    width: 100%;
+  }
+
   .pic img {
     width: 250px;
     height: 250px;
@@ -196,9 +325,9 @@
 
 
   .button {
-    margin-left: 585px;
-    margin-bottom: 150px;
-
+position: absolute;
+left: 50%;
+transform:translateX(-60px)
   }
 
   .page {
@@ -215,18 +344,49 @@
   }
 
 
+  @media screen and (max-width: 1024px) {
+    .card {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    .pic {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+
+    .text {
+      margin-left: 30px;
+    }
+  }
+
   /*----------------------頁尾------------------------- */
   .footer {
-    height: 173px;
-    width: 1280px;
+    /* height: 173px; */
+    width: 100%;
     background-color: #D6D1C2;
-    margin: auto;
+
   }
 
   .footer-container {
-    margin-left: 40px;
-    padding-top: 20px;
+    padding: 30px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: auto;
+
+  }
+
+  .footer-item {
+    min-width: 230px;
+
   }
 
   .footer-title {
@@ -256,13 +416,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 230px;
 
   }
 
   .footer-logo img {
     width: 230px;
-    margin-left: 270px;
-    margin-top: 10px;
 
   }
 
@@ -270,7 +429,8 @@
   .footer-icon {
     display: flex;
     flex-direction: column;
-    margin-left: 250px;
+    min-width: 170px;
+    width: 230px;
   }
 
   .footer-ig {
@@ -319,6 +479,137 @@
     color: #91997C;
   }
 
+  /* -------- */
+  @media screen and (max-width: 1024px) {
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      width: 100%;
+      background-color: #D6D1C2;
+      /* margin: auto; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-container {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-title {
+      font-size: 18px;
+
+    }
+
+    .footer-info {
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .footer-item {
+      order: 2;
+      transform: translateX(0px);
+
+    }
+
+    .footer-item h4 {
+      color: #525B1B;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .footer-info p {
+      line-height: 0.5;
+      font-weight: 400;
+      color: #91997C;
+      margin-bottom: 14px;
+
+    }
+
+    .foter-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .footer-logo img {
+      width: 230px;
+      margin-top: 10px;
+
+    }
+
+
+    .footer-icon {
+      display: flex;
+      flex-direction: column;
+      order: 1;
+      padding: 50px 0;
+    }
+
+    .footer-ig {
+      display: flex;
+      color: #91997C;
+      transform: translateX(30px);
+    }
+
+    .footer-ig-pic {
+      font-size: 45px;
+      margin-bottom: -10px;
+      margin-top: -10px;
+
+    }
+
+    .footer-ig-id {
+      font-size: 12px;
+      margin-top: 13px;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    .footer-fb {
+      display: flex;
+      margin-top: -5px;
+      color: #91997C;
+      transform: translateX(30px);
+
+    }
+
+    .footer-fb-pic {
+      font-size: 40px;
+      margin-bottom: -10px;
+
+    }
+
+    .footer-fb-id {
+      font-size: 12px;
+      margin-top: 22px;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    .footer-credit {
+      font-size: 30px;
+      margin-top: -2px;
+      letter-spacing: 10px;
+      padding-left: 3px;
+      color: #91997C;
+      transform: translateX(30px);
+
+    }
+  }
+
   /* .copyright {
     font-size: 12px;
     text-align: center;
@@ -327,11 +618,15 @@
 
 <body>
   <!-- ----------導覽列------------- -->
+  <input type="checkbox" id="menu-control">
   <header class="main-header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="LOGO.png" alt="赤心">
       </a>
+      <label for="menu-control" class="menu-btn">
+        <span></span>
+      </label>
       <nav class="main-nav">
         <a href="about.html">關於我們</a>
         <a href="product.html">所有商品</a>
@@ -385,12 +680,15 @@
         2022/12/1
       </div>
     </div>
+
+    <div class="button">
+      <button class="page"><a href="#">1</a></button>
+      <button class="page"><a href="#">2</a></button>
+    </div>
+
   </div>
 
-  <div class="button">
-    <button class="page"><a href="#">1</a></button>
-    <button class="page"><a href="#">2</a></button>
-  </div>
+
 
   <!--------------------------頁尾------------------------------>
   <footer class="footer">

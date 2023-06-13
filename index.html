@@ -25,15 +25,22 @@
   <!-- 連結CSS -->
   <link rel="stylesheet" href="slideshow.css">
   <link rel="stylesheet" href="index.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="grid.css"> -->
 </head>
 
 <body>
+  <a href="#"><img src="up.png" alt="up" class="up"></a>
   <!-- ----------導覽列------------- -->
+  <input type="checkbox" id="menu-control">
   <header class="main-header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="LOGO.png" alt="赤心">
       </a>
+      <label for="menu-control" class="menu-btn">
+        <span></span>
+    </label>
       <nav class="main-nav">
         <a href="about.html">關於我們</a>
         <a href="product.html">所有商品</a>
@@ -54,16 +61,15 @@
     <!-- 圖片投影 元件１-->
     <div class="carousel-inner">
       <!-- 第一張圖片 active　-->
-      <div class="carousel-item-active">
+      <div class="carousel-item active">
         <video class="video" autoplay muted loop playsinline>
           <source src="video.mp4">
         </video>
         <div class="video-text-logo">
-          <img src="赤心LOGO.png" alt="">
+          <img src="赤心LOGO.png" alt="LOGO">
         </div>
         <div class="video-title">
-          <span class="video-title-left">用一片赤誠的心意</span>
-          <span class="video-title-right">為你送上最美好而純粹的甜點</span>
+         <img src="赤心title.png" alt="title">
         </div>
       </div>
 
@@ -115,7 +121,7 @@
   <div class="hot">
 
     <div class="hot-card-top">
-      <div class="hot-item-top">
+      <div class="hot-item-top col-6">
         <div class="hot-pic-top">
           <img src="柑橘乳酪320x400.jpg" alt="柑橘乳酪蛋糕">
           <a href="#" class="hot-pic-text">
@@ -126,7 +132,7 @@
         </div>
       </div>
 
-      <div class="hot-item-top">
+      <div class="hot-item-top col-6">
         <div class="hot-pic-top">
           <img src="黑糖乳酪320x400.jpg" alt="黑糖乳酪蛋糕">
           <a href="#" class="hot-pic-text">
@@ -136,7 +142,7 @@
           </a>
         </div>
       </div>
-      <div class="hot-item-top">
+      <div class="hot-item-top col-6">
         <div class="hot-pic-top">
           <img src="草莓派對320x400.jpg" alt="草莓派對">
           <a href="#" class="hot-pic-text">
@@ -146,7 +152,7 @@
           </a>
         </div>
       </div>
-      <div class="hot-item-top">
+      <div class="hot-item-top col-6">
         <div class="hot-pic-top">
           <img src="原味乳酪派.jpg" alt="原味乳酪派">
           <a href="#" class="hot-pic-text">
@@ -162,7 +168,7 @@
 
     <div class="hot-card-bottom">
 
-      <div class="hot-item-bottom">
+      <div class="hot-item-bottom col-6">
         <div class="hot-pic-bottom">
           <img src="抹茶毛巾426x414.jpg" alt="抹茶毛巾捲">
           <a href="#" class="hot-pic-text">
@@ -173,7 +179,7 @@
         </div>
       </div>
 
-      <div class="hot-item-bottom">
+      <div class="hot-item-bottom col-6">
         <div class="hot-pic-bottom">
           <img src="抹茶提拉米蘇426x414.jpg" alt="">
           <a href="#" class="hot-pic-text">
@@ -183,9 +189,9 @@
           </a>
         </div>
       </div>
-      <div class="hot-item-bottom">
+      <div class="hot-item-bottom col-12" id="hot-item-bottom-last">
         <div class="hot-pic-bottom">
-          <img src="抹茶千層426x414.jpg" alt="抹茶千層">
+          <img src="抹茶千層426x414.jpg" alt="抹茶千層" id="hot-pic-bottom-last">
           <a href="#" class="hot-pic-text">
             <div class="hot-pic-options-bottom">
               抹茶千層
@@ -204,19 +210,16 @@
       <h2>好吃的祕密</h2>
       <p>DELICIOUS</p>
     </div>
-    <div class="delicious-art">
-      <span class="delicious-art-right">頂級的食材</span>
-      <span class="delicious-art-left">呈現完美的品質</span>
-    </div>
-
 
 
 
     <div class="delicious-card-left">
-      <div class="delicious-pic-left">
+      <span class="delicious-art-right">頂級的食材</span>
+
+      <div class="delicious-pic-left data-aos=fade-right">
         <img src="pexels-monstera-7144915.jpg" alt="小山園若竹抹茶">
       </div>
-      <div class="delicious-txt-left">
+      <div class="delicious-txt-left" >
         <h2>小山園若竹抹茶</h2>
         <p>
           源自日本茶葉生產商<br>
@@ -227,6 +230,7 @@
     </div>
 
     <div class="delicious-card-right">
+      <span class="delicious-art-left">呈現完美的品質</span>
       <div class="delicious-txt-right">
         <h2>紅富士草莓</h2>
         <p>
@@ -240,11 +244,11 @@
       </div>
     </div>
 
-    <div class="delicious-card-left">
+    <div class="delicious-card-left-bottom">
       <div class="delicious-pic-left-up">
         <img src="pexels-elle-hughes-1585851.jpg" alt="">
       </div>
-      <div class="delicious-txt-left">
+      <div class="delicious-txt-left" id="delicious-txt-left-bottom">
         <h2>高品質有機蛋</h2>
         <p>
           極具品質的高級雞蛋<br>
@@ -456,7 +460,9 @@
         navBg.style.boxShadow = "none";
       }
     }
+
   </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 
