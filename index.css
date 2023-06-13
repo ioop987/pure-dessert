@@ -1467,8 +1467,7 @@
     .hot-pic-options-bottom{
       height: 25%;
     }
-#hot-item-bottom-last{
-}
+
     #hot-pic-bottom-last{
       height: 100%;
       object-fit: cover;
@@ -1697,4 +1696,7 @@
     .col-12 {
       width: 100%
     }
+
+    
   }
+  
