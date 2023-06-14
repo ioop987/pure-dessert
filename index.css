@@ -304,7 +304,7 @@
   
   .hot-title {
     text-align: center;
-    margin-top: 130px;
+    margin-top: 80px;
     margin-bottom: 50px;
     position: relative;
   }
@@ -339,11 +339,9 @@
   }
 
   .hot {
-    display: flex;
     margin-top: 70px;
     flex-wrap: wrap;
 max-width: 1280px;
-    min-height: 814px;
 
     margin: auto;
 
@@ -359,11 +357,17 @@ max-width: 1280px;
     justify-content: center;
 
     transition: all 1s;
-    position: absolute;
-    right: -100vw;
+    /* position: absolute;
+    right: -100vw; */
 
   }
-
+  .hot-pic-text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-decoration: none;
+  }
   .hot-pic-options-top a {
     color: white;
     text-decoration: inherit;
@@ -376,27 +380,27 @@ max-width: 1280px;
 
   .hot-item-top {
     width: 25%;
-    height: 400px;
+    /* height: 400px; */
 
   }
 
   .hot-pic-top {
     position: relative;
     width: 100%;
-    height: 100%;
     overflow: hidden;
 
   }
 
   .hot-pic-top img {
     width: 100%;
-    height: 400px;
+    /* height: 100%; */
+    aspect-ratio: 4/5;
     transition: 0.5s;
     
 
   }
 
-  .hot-pic-top img:hover {
+  .hot-pic-top img:hover {  
     transform: scale(1.2);
   }
 
@@ -405,17 +409,11 @@ max-width: 1280px;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
     /* 設置背景顏色和透明度 */
     /* padding: 30px; */
     width: 100%;
-    height: 25%;
 
   }
 
@@ -435,7 +433,6 @@ max-width: 1280px;
     justify-content: center;
 
     transition: all 1s;
-    position: absolute;
     left: -100vw;
     top: 400px;
   }
@@ -446,8 +443,6 @@ max-width: 1280px;
 
   .hot-item-bottom {
     width: 33.333333%;  
-    height: 414.24px;
-    max-width: 1280px;
 
   }
 
@@ -467,21 +462,13 @@ max-width: 1280px;
   }
 
   .hot-pic-options-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     font-size: 24px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
     /* 設置背景顏色和透明度 */
     /* padding: 30px; */
     width: 100%;
-    height: 25%;
   }
 
   .hot-pic-options-bottom a {
@@ -508,13 +495,19 @@ max-width: 1280px;
     }
   }
 
-
+  @media screen and (max-width: 728px) {
+    .hot-title {
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+    }
+  
+  }
   /* --------------------------好吃的祕密---------------------------------- */
 
   .delicious {
     width: 100%;
     background: #EFE9DC;
-    padding-top: 130px;
+    padding-top: 90px;
     margin: auto;
     max-width: 1280px;
   }
@@ -740,6 +733,15 @@ max-width: 1280px;
     width: 20px;
   }
 
+  @media screen and (max-width: 728px) {
+    .delicious {
+      padding-top: 50px ;
+    }
+    .delicious-title {
+      padding-bottom: 3vh;
+  }
+    }
+  
   /* -------------------------甜點師-------------------------------- */
   .baker {
     max-width: 1280px;
@@ -1428,16 +1430,16 @@ max-width: 1280px;
     }
 
     .hot-item-top {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
-      height: 210px;
     }
-
+    .hot-item-top {
+      /* height: 300px; */
+    }
     .hot-item-top img {
-      width: 100%;
-      position: absolute;
-      top: -85px;
+      height: 100%;
+
+      display: block;
     }
 
     .hot-pic-options-top{
@@ -1486,7 +1488,7 @@ max-width: 1280px;
       height: auto;
       left: 0%;
       flex-direction: column;
-
+margin-bottom: 95px;
     }
 
     .delicious-pic-left {
@@ -1563,10 +1565,11 @@ max-width: 1280px;
 
     .delicious-pic-left-up {
       width: 100%;
+      top: 0;
     }
 
     .delicious-pic-left-up img {
-      top: -100px;
+      /* top: -100px; */
 
     }
 
