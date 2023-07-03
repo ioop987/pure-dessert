@@ -1,0 +1,130 @@
+/* -------------------所有商品-------------------------- */
+
+.title {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 130px;
+  margin-top: 180px;
+  position: relative;
+
+}
+
+.title h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.title h2::before,
+.title h2::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  top: 50%;
+  background: #666;
+  width: calc(50% - 160px);
+}
+
+.title h2::before {
+  left: 0;
+}
+
+.title h2::after {
+  right: 0;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.control {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.options {
+  width: 100%;
+}
+
+.options-title {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bolder;
+  padding-bottom: 15px;
+  border-bottom: black solid 1px;
+}
+
+.options-taste {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 500;
+}
+
+.options-taste a {
+  text-decoration: inherit;
+  color: rgb(115, 115, 115);
+  margin-left: 18px;
+}
+
+.card {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+  border: none;
+
+}
+
+.card img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.card img:hover {
+  transform: scale(0.95);
+}
+
+.text p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text :nth-child(2) {
+  margin-top: -10px;
+}
+
+.col-9 {
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-75px);
+  width: 40%;
+
+  /* margin-left: 200px; */
+
+
+}
+
+.page {
+  width: 30px;
+  background-color: white;
+  border: grey solid 0.5px;
+  margin-left: 22px;
+}
+
+.page a {
+  text-decoration: inherit;
+  color: black;
+}
