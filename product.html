@@ -55,9 +55,9 @@
             <div class="info col-3">
               <div class="options">
                 <div class="options-title">分類</div>
-                <btn-component :name="'經典抹茶'" :color="''" :num="'6'"></btn-component>
-                <btn-component :name="'新鮮草莓'" :color="''" :num="'4'"></btn-component>
-                <btn-component :name="'新鮮草莓'" :color="''" :num="'5'"></btn-component>
+                <btn-component :name="'經典抹茶'" :num="'6'"></btn-component>
+                <btn-component :name="'新鮮草莓'" :num="'4'"></btn-component>
+                <btn-component :name="'新鮮草莓'" :num="'5'"></btn-component>
               </div>
             </div>
             <div class="row col-9">
@@ -214,7 +214,7 @@
       })
 
       App.component('btn-component', {
-            props: ['name', 'color' , 'num'],
+            props: ['name' , 'num'],
             template: `
                 <div class="options-taste" :style="{
                     backgroundColor: color
