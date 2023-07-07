@@ -47,7 +47,6 @@
       <!-- -------------------title----------------------->
       <div class="title">
         <h2>所有商品</h2>
-        
       </div>
       <div class="control">
         <div class="container">
@@ -60,6 +59,12 @@
                 <btn-component :name="'新鮮草莓'" :num="'5'"></btn-component>
               </div>
             </div>
+            <!-- <div v-for="sort in uniqueSorts">
+              <p>{{ sort }}</p>
+            </div> -->
+            <!-- <div v-for="product in productList">
+              <p>{{ product.sort }}: {{ sortCounts[product.sort] }}</p>
+            </div> -->
             <div class="row col-9">
               <div class="col-12 col-l-4 col-m-6" v-for=" item in productList">
                 <div class="card">
@@ -210,7 +215,27 @@
             ],
           }
         },
-      
+        computed: {
+          sortCounts() {
+            const counts = {};
+            for (const product of this.productList) {
+              const sort = product.sort;
+              if (counts[sort]) {
+                counts[sort]++;
+              } else {
+                counts[sort] = 1;
+              }
+            }
+            return counts;
+          },
+          uniqueSorts() {
+            const sortSet = new Set();
+            for (const product of this.productList) {
+              sortSet.add(product.sort);
+            }
+            return Array.from(sortSet);
+          }
+        }
       })
 
       App.component('btn-component', {
