@@ -33,9 +33,11 @@
                <h6>{{ item }}</h6></a><i class="fa-solid fa-cart-shopping"></i></nav>
          </div>
        </header>
+       
       <!-- -------------------title----------------------->
       <div class="title">
         <h2>所有商品</h2>
+        
       </div>
       <div class="control">
         <div class="container">
@@ -43,9 +45,9 @@
             <div class="info col-3">
               <div class="options">
                 <div class="options-title">分類</div>
-                <div class="options-taste">經典抹茶<a href="#">6</a></div>
-                <div class="options-taste">新鮮草莓<a href="#">4</a></div>
-                <div class="options-taste">濃郁乳酪<a href="#">5</a></div>
+                <btn-component :name="'經典抹茶'" :color="''" :num="'6'"></btn-component>
+                <btn-component :name="'新鮮草莓'" :color="''" :num="'4'"></btn-component>
+                <btn-component :name="'新鮮草莓'" :color="''" :num="'5'"></btn-component>
               </div>
             </div>
             <div class="row col-9">
@@ -119,12 +121,9 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-      Vue.createApp({
+      const App = Vue.createApp({
         data() {
           return {
-
-
-
             home: {
                   index: 'home',
                   link: 'https://ioop987.github.io/pure-dessert',
@@ -137,8 +136,6 @@
               '門市資訊',
               '會員登入'
             ],
-            
-            
             logo:[
               {img: 'https://github.com/april808/vue-little-work/blob/master/images/LOGO.png?raw=true',
               link: 'https://ioop987.github.io/pure-dessert',
@@ -203,7 +200,20 @@
           }
         },
       
-      }).mount("#app")
+      })
+
+      App.component('btn-component', {
+            props: ['name', 'color' , 'num'],
+            template: `
+                <div class="options-taste" :style="{
+                    backgroundColor: color
+                }">
+                    {{name}}<a href="#">{{num}}</a>
+                </div>
+            `,
+        })
+
+      App.mount("#app")
     </script>
   </body>
 </html>
