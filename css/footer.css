@@ -1,0 +1,228 @@
+/*----------------------頁尾------------------------- */
+.footer {
+  /* height: 173px; */
+  width: 100%;
+  background-color: #D6D1C2;
+}
+
+.footer-container {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.footer-item {
+  min-width: 230px;
+}
+
+.footer-title {
+  font-size: 18px;
+}
+
+.footer-info {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.footer-item h4 {
+  color: #525B1B;
+  margin-top: 10px;
+}
+
+.footer-info p {
+  line-height: 0.5;
+  font-weight: 400;
+  color: #91997C;
+  margin-bottom: 14px;
+}
+
+.foter-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+}
+
+.footer-logo img {
+  width: 230px;
+}
+
+.footer-icon {
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  width: 230px;
+}
+
+.footer-ig {
+  display: flex;
+  color: #91997C;
+}
+
+.footer-ig-pic {
+  font-size: 45px;
+  margin-bottom: -10px;
+  margin-top: -10px;
+}
+
+.footer-ig-id {
+  font-size: 12px;
+  margin-top: 13px;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.footer-fb {
+  display: flex;
+  margin-top: -5px;
+  color: #91997C;
+}
+
+.footer-fb-pic {
+  font-size: 40px;
+  margin-bottom: -10px;
+}
+
+.footer-fb-id {
+  font-size: 12px;
+  margin-top: 22px;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.footer-credit {
+  font-size: 30px;
+  margin-top: -2px;
+  letter-spacing: 10px;
+  padding-left: 3px;
+  color: #91997C;
+}
+
+/* -------- */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 100%;
+    background-color: #D6D1C2;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    font-size: 18px;
+  }
+
+  .footer-info {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .footer-item {
+    order: 2;
+    transform: translateX(0px);
+  }
+
+  .footer-item h4 {
+    color: #525B1B;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .footer-info p {
+    line-height: 0.5;
+    font-weight: 400;
+    color: #91997C;
+    margin-bottom: 14px;
+  }
+
+  .foter-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    width: 230px;
+    margin-top: 10px;
+  }
+
+  .footer-icon {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    padding: 50px 0;
+  }
+
+  .footer-ig {
+    display: flex;
+    color: #91997C;
+    transform: translateX(30px);
+  }
+
+  .footer-ig-pic {
+    font-size: 45px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+  }
+
+  .footer-ig-id {
+    font-size: 12px;
+    margin-top: 13px;
+    margin-left: 25px;
+    font-weight: bold;
+  }
+
+  .footer-fb {
+    display: flex;
+    margin-top: -5px;
+    color: #91997C;
+    transform: translateX(30px);
+  }
+
+  .footer-fb-pic {
+    font-size: 40px;
+    margin-bottom: -10px;
+  }
+
+  .footer-fb-id {
+    font-size: 12px;
+    margin-top: 22px;
+    margin-left: 25px;
+    font-weight: bold;
+  }
+
+  .footer-credit {
+    font-size: 30px;
+    margin-top: -2px;
+    letter-spacing: 10px;
+    padding-left: 3px;
+    color: #91997C;
+    transform: translateX(30px);
+  }
+}
+
+/* -------- */
+/* .copyright {
+    font-size: 12px;
+    text-align: center;
+    } */
