@@ -26,11 +26,21 @@
   <body>
     <div id="app">
        <!-- ----------導覽列--------------->
-       <input id="menu-control" type="checkbox">
+       <input type="checkbox" id="menu-control">
        <header class="main-header">
-         <div class="container"><a class="logo" :href="logo[0].link"><img :src="logo[0].img" :alt="logo[0].name"></a>
-           <nav class="main-nav"><a href="#" v-for="item in nav">
-               <h6>{{ item }}</h6></a><i class="fa-solid fa-cart-shopping"></i></nav>
+         <div class="container">
+            <a class="logo" :href="logo[0].link">
+              <img :src="logo[0].img" :alt="logo[0].name">
+            </a>
+            <label for="menu-control" class="menu-btn">
+            <span></span>
+            </label>
+           <nav class="main-nav">
+            <a :href="item.link" v-for="item in nav">
+               {{ item.name }}
+            </a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
          </div>
        </header>
        
@@ -126,21 +136,22 @@
           return {
             home: {
                   index: 'home',
-                  link: 'https://ioop987.github.io/pure-dessert',
+                  link: './index.html',
                   srclink: './images/赤心LOGO.png'
               },
             nav: [
-              '關於我們',
-              '所有商品',
-              '最新消息',
-              '門市資訊',
-              '會員登入'
+              {name:'關於我們',link:'about.html'},
+              {name:'所有商品',link:'product.html'},
+              {name:'最新消息',link:'news.html'},
+              {name:'門市資訊',link:'shop.html'},
+              {name:'會員登入',link:'login.html'}
             ],
             logo:[
               {img: 'https://github.com/april808/vue-little-work/blob/master/images/LOGO.png?raw=true',
-              link: 'https://ioop987.github.io/pure-dessert',
+              link: './index.html',
               name: '赤心'},
             ],
+            sorts: ['經典抹茶','新鮮草莓','濃郁乳酪'],
             productList: [
               {
                 sort: '經典抹茶',

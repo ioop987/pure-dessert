@@ -11,3 +11,8 @@
 -消息頁面:[https://april808.github.io/vue-little-work/news.html](https://april808.github.io/vue-little-work/news.html)
 
 -商品卡片頁面:[https://april808.github.io/vue-little-work/product.html](https://april808.github.io/vue-little-work/product.html)
+
+---
+本頁是後續作業
+
+[https://april808.github.io/pure-dessert-vue/](https://april808.github.io/pure-dessert-vue/)

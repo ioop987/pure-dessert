@@ -26,11 +26,21 @@
   <body>
     <div id="app">
        <!-- ----------導覽列--------------->
-       <input id="menu-control" type="checkbox">
+       <input type="checkbox" id="menu-control">
        <header class="main-header">
-         <div class="container"><a class="logo" :href="logo[0].link"><img :src="logo[0].img" :alt="logo[0].name"></a>
-           <nav class="main-nav"><a href="#" v-for="item in nav">
-               <h6>{{ item }}</h6></a><i class="fa-solid fa-cart-shopping"></i></nav>
+         <div class="container">
+            <a class="logo" :href="logo[0].link">
+              <img :src="logo[0].img" :alt="logo[0].name">
+            </a>
+            <label for="menu-control" class="menu-btn">
+            <span></span>
+            </label>
+           <nav class="main-nav">
+            <a :href="item.link" v-for="item in nav">
+               {{ item.name }}
+            </a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
          </div>
        </header>
       <!-- -------------------title----------------------->
@@ -49,28 +59,6 @@
             <p>{{ item.time }}</p>
           </div>
         </div>
-    
-    <!--     <div class="card">
-          <div class="pic">
-            <img src="pexels-porapak-apichodilok-360624.jpg" alt="">
-          </div>
-          <div class="text">
-            <h3>甜甜迎新年</h3>
-            <p>全店甜點五折優惠！迎接幸福甜蜜的一年，品味美味，喜迎新春佳節！活動時間：1月1日至1月31日，敬請光臨！</p>
-            <p>2022/12/31</p>
-          </div>
-        </div>
-    
-        <div class="card">
-          <div class="pic">
-            <img src="pexels-kostas-dimopoulos-14952436.jpg" alt="">
-          </div>
-          <div class="text">
-            <h3>聖誕送好禮</h3>
-            <p>聖誕送好禮！購買任意甜點即贈限量聖誕禮盒，滿足您的味蕾與節日心意。活動時間：12月1日至12月25日，歡迎蒞臨享受節日甜蜜！</p>
-            2022/12/1
-          </div>
-        </div> -->
     
         <div class="button">
           <button class="page"><a href="#">1</a></button>
@@ -135,42 +123,37 @@
       Vue.createApp({
         data() {
           return {
-
-
-
             home: {
                   index: 'home',
-                  link: 'https://ioop987.github.io/pure-dessert',
+                  link: './index.html',
                   srclink: './images/赤心LOGO.png'
               },
             nav: [
-              '關於我們',
-              '所有商品',
-              '最新消息',
-              '門市資訊',
-              '會員登入'
+              {name:'關於我們',link:'about.html'},
+              {name:'所有商品',link:'product.html'},
+              {name:'最新消息',link:'news.html'},
+              {name:'門市資訊',link:'shop.html'},
+              {name:'會員登入',link:'login.html'}
             ],
-            
-            
             logo:[
               {img: 'https://github.com/april808/vue-little-work/blob/master/images/LOGO.png?raw=true',
-              link: 'https://ioop987.github.io/pure-dessert',
+              link: './index.html',
               name: '赤心'},
             ],
             news: [
-        {title: '歡慶母親節',
-         des:'歡慶母親節！品嚐愛的滋味，購買任意甜點享八折優惠。感謝母親的奉獻，讓我們一起用甜點表達愛意。活動日期：5月7日至5月9日，敬請光臨！',
-         time: '2023/5/1',
-         srclink:'https://ioop987.github.io/pure-dessert/pexels-george-dolgikh-2072170.jpg'}
-        ,{title: '甜甜迎新年',
-         des:'全店甜點五折優惠！迎接幸福甜蜜的一年，品味美味，喜迎新春佳節！活動時間：1月1日至1月31日，敬請光臨！',
-         time: '2023/5/1',
-         srclink:'https://ioop987.github.io/pure-dessert/pexels-porapak-apichodilok-360624.jpg'}
-        ,{title: '聖誕送好禮',
-         des:'歡慶母親節！品嚐愛的滋味，購買任意甜點享八折優惠。感謝母親的奉獻，讓我們一起用甜點表達愛意。活動日期：5月7日至5月9日，敬請光臨！',
-         time: '2023/5/1',
-         srclink:'https://ioop987.github.io/pure-dessert/pexels-kostas-dimopoulos-14952436.jpg'}],
-          }
+              {title: '歡慶母親節',
+              des:'歡慶母親節！品嚐愛的滋味，購買任意甜點享八折優惠。感謝母親的奉獻，讓我們一起用甜點表達愛意。活動日期：5月7日至5月9日，敬請光臨！',
+              time: '2023/5/1',
+              srclink:'https://ioop987.github.io/pure-dessert/pexels-george-dolgikh-2072170.jpg'}
+              ,{title: '甜甜迎新年',
+              des:'全店甜點五折優惠！迎接幸福甜蜜的一年，品味美味，喜迎新春佳節！活動時間：1月1日至1月31日，敬請光臨！',
+              time: '2023/5/1',
+              srclink:'https://ioop987.github.io/pure-dessert/pexels-porapak-apichodilok-360624.jpg'}
+              ,{title: '聖誕送好禮',
+              des:'歡慶母親節！品嚐愛的滋味，購買任意甜點享八折優惠。感謝母親的奉獻，讓我們一起用甜點表達愛意。活動日期：5月7日至5月9日，敬請光臨！',
+              time: '2023/5/1',
+              srclink:'https://ioop987.github.io/pure-dessert/pexels-kostas-dimopoulos-14952436.jpg'}],
+                }
         },
       
       }).mount("#app")
